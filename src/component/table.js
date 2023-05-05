@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
+import React from 'react';
 
-const Table = ({ data, showHeader, showFooter, tableHead }) => {
+export const Table = ({ data, showHeader, showFooter, tableHead }) => {
     const [columns, setColumns] = useState([]);
     const [sortedData, setSortedData] = useState(data);
     const [sortOrder, setSortOrder] = useState({ column: '', ascending: true });
@@ -111,7 +112,7 @@ const Table = ({ data, showHeader, showFooter, tableHead }) => {
                                 {column}
 
                                 {sortedData[0] && sortOrder.column === Object.keys(sortedData[0])[index] && (
-                                    sortOrder.ascending ? ' 🔼' : ' 🔽'
+                                    sortOrder.ascending ? ' ' : ' '
                                 )}
                             </th>
                         ))}
@@ -131,5 +132,3 @@ const Table = ({ data, showHeader, showFooter, tableHead }) => {
         </>
     );
 };
-
-export default Table;

@@ -1,6 +1,6 @@
 {
   "name": "@swanndolia/react-datatable",
-  "version": "1.1.0",
+  "version": "1.2.4",
   "private": false,
   "author": "Swanndolia",
   "license": "ISC",
@@ -8,13 +8,9 @@
     "url": "https://github.com/Swanndolia/react-datatable/issues"
   },
   "homepage": "https://github.com/Swanndolia/react-datatable#readme",
-  "peerdependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "main": "table.js",
+  "main": "dist/table.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "set NODE_ENV=production&&babel table.js --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__"
   },
   "repository": {
     "type": "git",
@@ -25,5 +21,14 @@
     "datatable",
     "table",
     "data"
-  ]
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.21.5",
+    "babel-preset-react": "^6.24.1"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
 }
