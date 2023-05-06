@@ -1,4 +1,4 @@
-Table ComponenReact Table ComponenEmployee List Table
+Employee List Table
 
 This is a simple employee list table React component that allows sorting, searching, and pagination. It accepts an array of objects as data prop and an array of strings as tableHead prop to define the table header columns. You can optionally show or hide the table header and footer by setting the showHeader and showFooter props to true or false. The number of rows to show per page can be set using the rowsPerPage prop.
 
@@ -10,6 +10,7 @@ jsx
 
 import { Table } from './Table';
 
+<pre>
 const employeeData = [
   { id: 1, name: 'John Doe', age: 32, department: 'Sales' },
   { id: 2, name: 'Jane Doe', age: 27, department: 'Marketing' },
@@ -17,9 +18,11 @@ const employeeData = [
   { id: 4, name: 'Mary Johnson', age: 38, department: 'Finance' },
   // ... more employees
 ];
+</pre>
 
 const tableHead = ['ID', 'Name', 'Age', 'Department'];
 
+<pre>
 function App() {
   return (
     <div>
@@ -36,6 +39,7 @@ function App() {
     </div>
   );
 }
+</pre>
 
 Props
 The following props are available:
@@ -61,4 +65,4 @@ The component has the following features:
 
 License
 
-This component is released under the MIT License. See LICENSE file for details.This component is open-source and free to use under the MIT license. See the LICENSE file for more information.This project is licensed under the MIT License. See the LICENSE file for details.This project is licensed under the MIT License. See the LICENSE file for details.
+This component is released under the MIT License. See LICENSE file for details.
