@@ -1,48 +1,64 @@
-Table ComponenReact Table Component
-This is a reusable table component for React that allows you to display, sort, filter, and paginate tabular data.
-Features
-Sort table columns in ascending or descending order
-Filter table rows by searching for a specific keyword
-Paginate table rows to display a limited number of rows per page
-Customize the table header and footer
-Pass in data and column names as props
+Table ComponenReact Table ComponenEmployee List Table
+
+This is a simple employee list table React component that allows sorting, searching, and pagination. It accepts an array of objects as data prop and an array of strings as tableHead prop to define the table header columns. You can optionally show or hide the table header and footer by setting the showHeader and showFooter props to true or false. The number of rows to show per page can be set using the rowsPerPage prop.
+
 Usage
-Install the component using npm:
-css
-Copy code
-npm install --save react-table-component
-Import the component into your React application:
-js
-Copy code
-import { Table } from 'react-table-component';
-Render the component in your JSX code:
+
+To use the component, simply import it and render it in your component, passing the required props.
+
 jsx
-Copy code
-const data = [
-  { name: 'John Doe', age: 32, city: 'New York' },
-  { name: 'Jane Doe', age: 28, city: 'Los Angeles' },
-  { name: 'Bob Smith', age: 45, city: 'Chicago' },
-  { name: 'Mary Johnson', age: 37, city: 'Houston' }
+
+import { Table } from './Table';
+
+const employeeData = [
+  { id: 1, name: 'John Doe', age: 32, department: 'Sales' },
+  { id: 2, name: 'Jane Doe', age: 27, department: 'Marketing' },
+  { id: 3, name: 'Bob Smith', age: 45, department: 'IT' },
+  { id: 4, name: 'Mary Johnson', age: 38, department: 'Finance' },
+  // ... more employees
 ];
 
-const tableHead = ['Name', 'Age', 'City'];
+const tableHead = ['ID', 'Name', 'Age', 'Department'];
 
-return (
-  <Table
-    data={data}
-    tableHead={tableHead}
-    showHeader={true}
-    showFooter={true}
-  />
-);
+function App() {
+  return (
+    <div>
+       (
+    Employee<div>Employee List
+      <h1>Employee List</h1>
+      <Table
+        data={employeeData}
+        tableHead={tableHead}
+        showHeader={true}
+        showFooter={true}
+        rowsPerPage={10}
+      />
+    </div>
+  );
+}
+
 Props
-`datadata (required): An array of objects representing the data to be displayed in the table.
-`tableHeadtableHead (required): An array of strings representing the names of the table columns.
-showHeader (optional, default: true): A boolean value indicating whether to display the table header.
-showFooter (optional, default: true): A boolean value indicating whether to display the table footer.
-rowsPerPage (optional, default: 10): A number representing the maximum number of rows to display per page.
-handleRowClick (optional): A function to handle row click events.
-customClasses (optional): An object containing custom CSS classes for the table, header, and footer.
-customStyles (optional): An object containing custom CSS styles for the table, header, and footer.
+The following props are available:
+
+-data (required): An array of objects representing the employee data to be displayed in the table. Each object should have the same keys.
+
+-tableHead (required): An array of strings representing the table header columns. The number of columns should match the number of keys in each object in the data array.
+
+-showHeader (optional): A boolean value indicating whether to show the table header. Default is true.
+
+-showFooter (optional): A boolean value indicating whether to show the table footer with pagination. Default is true.
+
+-rowsPerPage (optional): An integer value representing the number of rows to show per page. Default is 10.
+
+Features
+The component has the following features:
+
+-Sorting: Click on a table header to sort the table data by that column. Click again to toggle between ascending and descending order.
+
+-Searching: Type a search query in the search box to filter the table data by any column. The search is case-insensitive and supports partial matches.
+
+-Pagination: The table is split into pages with a fixed number of rows per page. Use the page navigation buttons to move between pages.
+
 License
-This component is open-source and free to use under the MIT license. See the LICENSE file for more information.This project is licensed under the MIT License. See the LICENSE file for details.This project is licensed under the MIT License. See the LICENSE file for details.
+
+This component is released under the MIT License. See LICENSE file for details.This component is open-source and free to use under the MIT license. See the LICENSE file for more information.This project is licensed under the MIT License. See the LICENSE file for details.This project is licensed under the MIT License. See the LICENSE file for details.
